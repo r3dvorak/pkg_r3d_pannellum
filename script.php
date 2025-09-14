@@ -6,8 +6,7 @@
  * @author      Richard Dvorak, r3d.de
  * @copyright   Copyright (C) 2025 Richard Dvorak, https://r3d.de
  * @license     GPL-3.0-or-later https://www.gnu.org/licenses/gpl-3.0.html
- * @version     5.2.0
- * @file        packages/pkg_r3d_pannellum/script.php
+ * @version     5.2.2
  */
 
 defined('_JEXEC') or die;
@@ -15,12 +14,12 @@ defined('_JEXEC') or die;
 use Joomla\CMS\Factory;
 
 /**
- * Package installer script to finalize install.
+ * Package installer script: post-install tweaks.
  */
 final class pkg_r3d_pannellumInstallerScript
 {
     /**
-     * Auto-enable the system plugin r3d_adminui after installation/update.
+     * Auto-enable the system plugin r3d_adminui after install/update.
      *
      * @param string $type
      * @param object $parent
@@ -28,18 +27,30 @@ final class pkg_r3d_pannellumInstallerScript
      */
     public function postflight($type, $parent): void
     {
-        $db = Factory::getContainer()->get('DatabaseDriver');
-        $query = $db->getQuery(true)
-            ->update($db->quoteName('#__extensions'))
-            ->set($db->quoteName('enabled') . ' = 1')
-            ->where($db->quoteName('type') . ' = ' . $db->quote('plugin'))
-            ->where($db->quoteName('element') . ' = ' . $db->quote('r3d_adminui'))
-            ->where($db->quoteName('folder') . ' = ' . $db->quote('system'));
-
         try {
-            $db->setQuery($query)->execute();
+            $db = Factory::getContainer()->get('DatabaseDriver');
+
+            // Find the plugin
+            $query = $db->getQuery(true)
+                ->select($db->quoteName('extension_id'))
+                ->from($db->quoteName('#__extensions'))
+                ->where($db->quoteName('type') . ' = ' . $db->quote('plugin'))
+                ->where($db->quoteName('element') . ' = ' . $db->quote('r3d_adminui'))
+                ->where($db->quoteName('folder') . ' = ' . $db->quote('system'))
+                ->setLimit(1);
+
+            $pluginId = (int) $db->setQuery($query)->loadResult();
+
+            if ($pluginId) {
+                $query = $db->getQuery(true)
+                    ->update($db->quoteName('#__extensions'))
+                    ->set($db->quoteName('enabled') . ' = 1')
+                    ->where($db->quoteName('extension_id') . ' = ' . (int) $pluginId);
+
+                $db->setQuery($query)->execute();
+            }
         } catch (\Throwable $e) {
-            // Don't hard-fail the package installation if this toggle fails
+            // Soft-fail: don't block package install if enabling fails.
         }
     }
 }
