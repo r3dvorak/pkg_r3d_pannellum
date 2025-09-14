@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <extension type="module" version="5.0" client="site" method="upgrade">
 	<name>MOD_R3D_PANNELLUM</name>
-	<version>5.2.0</version>
+	<version>5.2.2</version>
 	<creationDate>2025-09-14</creationDate>
 	<author>Richard Dvorak, r3d.de</author>
 	<authorUrl>https://r3d.de</authorUrl>
@@ -18,6 +18,9 @@
 	</files>
 	<media destination="mod_r3d_pannellum" folder="media">
 		<filename>demo.jpg</filename>
+		<folder>pannellum</folder>	
+		<filename>pannellum/pannellum.js</filename>
+		<filename>pannellum/pannellum.css</filename>
 	</media>
 	<languages>
 		<language tag="en-GB">language/en-GB/en-GB.mod_r3d_pannellum.ini</language>
@@ -30,6 +33,22 @@
 		<fields name="params">
 			<!-- BASIC: always visible; Setup Level first -->
 			<fieldset name="basic" label="Basic Settings">
+				<!-- NEW: Asset loading -->
+				<field
+					name="useCdn"
+					type="radio"
+					label="Load Pannellum from CDN?"
+					description="If enabled, tries to load pannellum.js from CDN (with fallback to local if it fails). If disabled, only local files are used."
+					default="1">
+					<option value="1">CDN (recommended, always up to date)</option>
+					<option value="0">Local only (from module media)</option>
+				</field>
+				<field
+					name="cdnVersion"
+					type="text"
+					label="Pannellum CDN Version"
+					description="Set the major/minor version to use from the CDN (e.g. 2.5.6)."
+					default="2.5.6" />
 				<field
                     name="setup_note"
                     type="note"
