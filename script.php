@@ -2,11 +2,11 @@
 /**
  * @package     Joomla.Package
  * @subpackage  pkg_r3d_pannellum
- * @creation    2025-09-04
+ * @creationDate 2025-09-14
  * @author      Richard Dvorak, r3d.de
  * @copyright   Copyright (C) 2025 Richard Dvorak, https://r3d.de
- * @license     GNU GPL v3 or later (https://www.gnu.org/licenses/gpl-3.0.html)
- * @version     5.0.8
+ * @license     GPL-3.0-or-later https://www.gnu.org/licenses/gpl-3.0.html
+ * @version     5.2.0
  * @file        packages/pkg_r3d_pannellum/script.php
  */
 

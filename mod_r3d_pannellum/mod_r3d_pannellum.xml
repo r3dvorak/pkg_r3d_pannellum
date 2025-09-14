@@ -1,29 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
 <extension type="module" version="5.0" client="site" method="upgrade">
-    <name>mod_r3d_pannellum</name>
-    <title>R3D Pannellum Viewer</title>
-    <description>Embed 360° Panoramas with Pannellum (Basic / Intermediate / Advanced)</description>
-    <author>R3D Internet Dienstleistungen</author>
-    <version>5.1.1</version>
+  <name>MOD_R3D_PANNELLUM</name>
+  <version>5.2.0</version>
+  <creationDate>2025-09-14</creationDate>
+  <author>Richard Dvorak, r3d.de</author>
+  <authorUrl>https://r3d.de</authorUrl>
+  <license>GPL-3.0-or-later</license>
+  <title>R3D Pannellum Viewer</title>
+  <description>Embed 360° Panoramas with Pannellum (Basic / Intermediate / Advanced)</description>
 
-    <files>
-        <filename module="mod_r3d_pannellum">mod_r3d_pannellum.php</filename>
-        <filename>helper.php</filename>
-        <folder>tmpl</folder>
-        <folder>language</folder>
-        <folder>forms</folder>
-    </files>
+  <files>
+    <filename module="mod_r3d_pannellum">mod_r3d_pannellum.php</filename>
+    <filename>helper.php</filename>
+    <folder>tmpl</folder>
+    <folder>language</folder>
+    <folder>forms</folder>
+    <folder>media</folder>
+  </files>
 
-    <!-- Demo asset in /media/mod_r3d_pannellum -->
-    <media destination="mod_r3d_pannellum" folder="media">
-        <filename>demo.jpg</filename>
-    </media>
+  <media destination="mod_r3d_pannellum" folder="media">
+    <filename>demo.jpg</filename>
+  </media>
 
-    <languages>
-        <!-- Explicit language files -->
-        <language tag="en-GB">language/en-GB/en-GB.mod_r3d_pannellum.ini</language>
-        <language tag="de-DE">language/de-DE/de-DE.mod_r3d_pannellum.ini</language>
-    </languages>
+  <languages>
+    <language tag="en-GB">language/en-GB/en-GB.mod_r3d_pannellum.ini</language>
+    <language tag="en-GB">language/en-GB/en-GB.mod_r3d_pannellum.sys.ini</language>
+    <language tag="de-DE">language/de-DE/de-DE.mod_r3d_pannellum.ini</language>
+    <language tag="de-DE">language/de-DE/de-DE.mod_r3d_pannellum.sys.ini</language>
+  </languages>
 
     <config>
         <!-- Everything below shows inside the "Module" tab -->
