@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<extension type="plugin" version="5.0" group="system" method="upgrade">
+<extension type="plugin" version="4.0" group="system" method="upgrade">
 	<name>PLG_SYSTEM_R3D_ADMINUI</name>
-	<version>5.2.0</version>
+	<version>5.2.5</version>
 	<creationDate>2025-09-14</creationDate>
 	<author>Richard Dvorak, r3d.de</author>
 	<authorUrl>https://r3d.de</authorUrl>
 	<license>GPL-3.0-or-later</license>
+	<title>R3D Admin UI</title>
 	<description>Admin UI helpers for R3D extensions.</description>
 	<files>
 		<filename plugin="r3d_adminui">r3d_adminui.php</filename>
