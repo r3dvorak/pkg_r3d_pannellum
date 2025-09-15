@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<extension type="package" version="4.0" method="upgrade">
+<extension type="package" method="upgrade">
 	<name>PKG_R3D_PANNELLUM</name>
 	<packagename>r3d_pannellum</packagename>
 	<title>R3D Pannellum Viewer</title>
-	<version>5.2.8</version>
+	<version>5.2.9</version>
 	<creationDate>2025-09-15</creationDate>
 	<author>Richard Dvorak, r3d.de</author>
 	<authorUrl>https://r3d.de</authorUrl>

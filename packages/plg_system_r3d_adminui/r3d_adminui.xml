@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<extension type="plugin" version="4.0" group="system" method="upgrade">
+<extension type="plugin" group="system" method="upgrade">
 	<name>PLG_SYSTEM_R3D_ADMINUI</name>
 	<version>5.2.5</version>
 	<creationDate>2025-09-14</creationDate>
