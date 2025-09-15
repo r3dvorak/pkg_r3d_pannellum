@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<extension type="package" version="5.0" method="upgrade">
+<extension type="package" version="4.0" method="upgrade">
 	<name>PKG_R3D_PANNELLUM</name>
-	<version>5.2.3</version>
+	<version>5.2.4</version>
 	<creationDate>2025-09-14</creationDate>
 	<author>Richard Dvorak, r3d.de</author>
 	<authorUrl>https://r3d.de</authorUrl>
@@ -9,9 +9,8 @@
 	<description>R3D Pannellum Viewer and Admin UI plugin</description>
 
 	<files>
-		<!-- Folder names below must contain each extension's own manifest -->
-		<file type="module" id="mod_r3d_pannellum" client="site">mod_r3d_pannellum</file>
-		<file type="plugin" id="r3d_adminui" group="system">plg_system_r3d_adminui</file>
+		<file type="module" id="mod_r3d_pannellum" client="site">mod_r3d_pannellum/mod_r3d_pannellum.xml</file>
+		<file type="plugin" id="r3d_adminui" group="system">plg_system_r3d_adminui/r3d_adminui.xml</file>
 	</files>
 
 	<!-- Place this file next to the package XML (see structure below) -->
